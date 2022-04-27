@@ -37,7 +37,7 @@ def signup(): # define the sign up function
         name = request.form.get('name')
         password = request.form.get('password')
         creditcard = request.form.get('creditcard')
-        membership = request.form['membership']
+        membership = request.form.get('Membership')
         user = User.query.filter_by(email=email).first() # if this returns a user, then the email already exists in database
         if user: # if a user is found, we want to redirect back to signup page so user can try again
             flash('Email address already exists')
